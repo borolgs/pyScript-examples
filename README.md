@@ -4,6 +4,8 @@ PyScript is simple Zero Touch Node to run python scripts in a dynamo player (htt
 - Prints and errors are available for viewing from the dynamo player.
 - The current folder is added to the search paths.
 - To create a new script, you do not need to open dynamo: just copy any pair of <script name> .dyn / <script name> .py
+![Nodes](docs/images/nodes.png)
+![Player](docs/images/player.png)
 
 ## Installation
 1. Find and install PyScript package.
