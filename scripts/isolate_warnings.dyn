@@ -1,0 +1,134 @@
+{
+  "Uuid": "3ce77fcd-09dd-4143-95c6-7ef18eb89537",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "MyFirstScript",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [
+    {
+      "Id": "7fb33f89547943c0b4eec6f368c3e73c",
+      "Name": "Script.Execute_",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Running a python script with the same name as the workspace.\n\nScript.Execute ( ): var[]..[]"
+    },
+    {
+      "Id": "4554b35bb99f4abda736a1dd30288165",
+      "Name": "Output",
+      "Type": "unknown",
+      "InitialValue": "",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Nodes": [
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "PyScript.Script.Execute",
+      "Id": "7fb33f89547943c0b4eec6f368c3e73c",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "f8054dd2ff874bafbc309cda254ad491",
+          "Name": "output",
+          "Description": "The script output.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Running a python script with the same name as the workspace.\n\nScript.Execute ( ): var[]..[]"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "4554b35bb99f4abda736a1dd30288165",
+      "Inputs": [
+        {
+          "Id": "db7413ae1b63420d84f08ebf47a73c65",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "406023efefde48db97d55df0f561b248",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "f8054dd2ff874bafbc309cda254ad491",
+      "End": "db7413ae1b63420d84f08ebf47a73c65",
+      "Id": "884a0a49dbf94548ac00c687681ad38a"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6826",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -6.3063639698863092,
+      "EyeY": 0.96981947501693,
+      "EyeZ": 47.906116859260649,
+      "LookX": 2.0137997440201474,
+      "LookY": 29.970633457662284,
+      "LookZ": -52.67547570489932,
+      "UpX": -0.025562396613786995,
+      "UpY": 0.74314482547739669,
+      "UpZ": 0.66864215560008955
+    },
+    "NodeViews": [
+      {
+        "ShowGeometry": true,
+        "Name": "Script.Execute_",
+        "Id": "7fb33f89547943c0b4eec6f368c3e73c",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 268.62853597425442,
+        "Y": 301.55714433440608
+      },
+      {
+        "ShowGeometry": true,
+        "Name": "Output",
+        "Id": "4554b35bb99f4abda736a1dd30288165",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": true,
+        "Excluded": false,
+        "X": 447.70994856735558,
+        "Y": 305.44118243877989
+      }
+    ],
+    "Annotations": [],
+    "X": -89.844628828028476,
+    "Y": -76.953276821402937,
+    "Zoom": 1.0606077223602073
+  }
+}
