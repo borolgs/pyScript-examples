@@ -58,7 +58,6 @@ def transaction(f, doc=doc):
 ```python
 from itertools import chain
 from System.Collections.Generic import List
-# импорт из нашего wrapper'а
 from wrapper import doc, transaction, DB
 
 
