@@ -4,6 +4,7 @@ PyScript is simple Zero Touch Node to run python scripts in a dynamo player (htt
 - Prints and errors are available for viewing from the dynamo player.
 - The current folder is added to the search paths.
 - To create a new script, you do not need to open dynamo: just copy any pair of <script name> .dyn / <script name> .py
+
 ![Nodes](docs/images/nodes.png)
 ![Player](docs/images/player.png)
 
@@ -61,18 +62,6 @@ from System.Collections.Generic import List
 from wrapper import doc, transaction, DB
 
 
-def get_warning_element_ids():
-    warnings = doc.GetWarnings()
-    war_elements = list(chain(*(w.GetFailingElements() for w in warnings)))
-    return war_elements
-
-
-@transaction
-def isolate_elements(element_ids, view=doc.ActiveView):
-    element_to_isolate = List[DB.ElementId](element_ids)
-    view.IsolateElementsTemporary(element_to_isolate)
-
-
 def isolate_warnings():
     warning_el_ids = get_warning_element_ids()
     if not warning_el_ids:
@@ -80,6 +69,18 @@ def isolate_warnings():
 
     isolate_elements(warning_el_ids)
     return "Usolated {} elements".format(len(warning_el_ids))
+
+
+def get_warning_element_ids():
+    warnings = doc.GetWarnings()
+    element_ids = list(chain(*(w.GetFailingElements() for w in warnings)))
+    return element_ids
+
+
+@transaction
+def isolate_elements(element_ids, view=doc.ActiveView):
+    elements_to_isolate = List[DB.ElementId](element_ids)
+    view.IsolateElementsTemporary(elements_to_isolate)
 
 
 result = isolate_warnings()

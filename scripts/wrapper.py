@@ -18,7 +18,7 @@ app = uiapp.Application
 uidoc = uiapp.ActiveUIDocument
 
 
-def transaction(f, name="", doc=doc):
+def transaction(f, doc=doc):
     def wrapped(*args, **kwargs):
         TransactionManager.Instance.EnsureInTransaction(doc)
         r = f(*args, **kwargs)
